@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace = "SeasonsService";
+
+import "google/protobuf/empty.proto";
+
+package zodiac;
+
+service Zodiac{
+	rpc AddZodiac(AddZodiacRequest) returns (AddZodiacResponse);
+	rpc GetAllZodiacs(google.protobuf.Empty) returns (GetAllzodiacsResponse);
+}
+
+message AddZodiacRequest{
+	ZodiacObj zodiac = 1;
+}
+
+message AddZodiacResponse{
+	Status status = 1;
+	string sign = 2;
+
+	enum Status{
+		SUCCES=0;
+		ERROR=1;
+	}
+}
+
+message GetAllzodiacsResponse{
+	repeated ZodiacObj zodiacs = 1;
+}
+
+message ZodiacObj{
+	string date=1;
+}
