@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "SeasonsService";
+
+import "google/protobuf/empty.proto";
+
+package summer;
+
+service Summer{
+	rpc AddSummer(AddSummerRequest) returns (AddSummerResponse);
+}
+
+message AddSummerRequest{
+	string summerDate=1;
+}
+
+message AddSummerResponse{
+	Status status = 1;
+	string sign = 2;
+	string season=3;
+
+	enum Status{
+		SUCCES=0;
+		ERROR=1;
+	}
+}
+

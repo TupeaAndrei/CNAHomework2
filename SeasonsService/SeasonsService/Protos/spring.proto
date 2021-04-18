@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "SeasonsService";
+
+import "google/protobuf/empty.proto";
+
+package spring;
+
+service Spring{
+	rpc AddSpring(AddSpringRequest) returns (AddSpringResponse);
+}
+
+message AddSpringRequest{
+	string springDate=1;
+}
+
+message AddSpringResponse{
+	Status status = 1;
+	string sign = 2;
+	string season = 3;
+
+	enum Status{
+		SUCCES=0;
+		ERROR=1;
+	}
+}
+

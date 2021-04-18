@@ -4,17 +4,17 @@ option csharp_namespace = "SeasonsService";
 
 import "google/protobuf/empty.proto";
 
-package zodiac;
+package autumn;
 
-service Zodiac{
-	rpc AddZodiac(AddZodiacRequest) returns (AddZodiacResponse);
+service Autumn{
+	rpc AddAutumn(AddAutumnRequest) returns (AddAutumnResponse);
 }
 
-message AddZodiacRequest{
-	ZodiacObj zodiac = 1;
+message AddAutumnRequest{
+	string autumnDate=1;
 }
 
-message AddZodiacResponse{
+message AddAutumnResponse{
 	Status status = 1;
 	string sign = 2;
 	string season = 3;
@@ -25,6 +25,3 @@ message AddZodiacResponse{
 	}
 }
 
-message ZodiacObj{
-	string date=1;
-}
