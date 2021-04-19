@@ -17,7 +17,6 @@ message AddZodiacRequest{
 message AddZodiacResponse{
 	Status status = 1;
 	string sign = 2;
-	string season = 3;
 
 	enum Status{
 		SUCCES=0;
